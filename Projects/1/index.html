@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Crime Data</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+      div{
+          background-color:black;
+          color:white;
+      }
+      input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    background-color:blue;
+    color: white;
+}
+    select{
+        color:black;
+    }
+  </style>
+   <body>
+
+   
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                         <center><h1>Crimes in Chicago 2001-Present</h1></center>
+                         <center><h5>Made By Alex Barragan</h5></center>
+                                  
+    
+    
+   
+                       
+                        <span class="subheading">Enter year of crime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+   
+                     
+    <div id="form">
+       
+        <input id="txtYear"  align="center" type="text"></input>
+        <h5>Type of crime</h5>
+        <select id="txtType">
+  <option value="ARSON">ARSON</option>
+  <option value="ASSAULT">ASSAULT</option>
+  <option value="BATTERY">BATTERY</option>
+  <option value="BURGLARY">BURGLARY</option>
+  <option value="CONCEALED CARRY LICENSE VIOLATION">CONCEALED CARRY LICENSE VIOLATION</option>
+  <option value="CRIM SEXUAL ASSAULT">CRIM SEXUAL ASSAULT</option>
+  <option value="CRIMINAL DAMAGE">CRIMINAL DAMAGE</option>
+  <option value="CRIMINAL TRESPASS">CRIMINAL TRESPASS</option>
+  <option value="DECEPTIVE PRACTICE">DECEPTIVE PRACTICE</option>
+  <option value="DOMESTIC VIOLENCE">DOMESTIC VIOLENCE</option>
+  <option value="GAMBLING">GAMBLING</option>
+  <option value="HOMICIDE">HOMICIDE</option>
+  <option value="HUMAN TRAFFICKING">HUMAN TRAFFICKING</option>
+  <option value="INTERFERENCE WITH PUBLIC OFFICER">INTERFERENCE WITH PUBLIC OFFICER</option>
+  <option value="INTIMIDATION">INTIMIDATION</option>
+  <option value="KIDNAPPING">KIDNAPPING</option>
+  <option value="LIQUOR LAW VIOLATION">LIQUOR LAW VIOLATION</option>
+  <option value="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</option>
+  <option value="NARCOTICS">NARCOTICS</option>
+  <option value="NON-CRIMINAL">NON-CRIMINAL</option>
+  <option value="OBSCENITY">OBSCENITY</option>
+  <option value="OFFENSE INVOLVING CHILDREN">OFFENSE INVOLVING CHILDREN</option>
+  <option value="OTHER OFFENSE">OTHER OFFENSE</option>
+  <option value="PROSTITUTION">PROSTITUTION</option>
+  <option value="PUBLIC INDECENCY">PUBLIC INDECENCY</option>
+  <option value="PUBLIC PEACE VIOLATION">PUBLIC PEACE VIOLATION</option>
+  <option value="RITUALISM">RITUALISM</option>
+  <option value="ROBBERY">ROBBERY</option>
+  <option value="SEX OFFENSE">SEX OFFENSE</option>
+  <option value="STALKING">STALKING</option>
+  <option value="THEFT">THEFT</option>
+  <option value="WEAPONS VIOLATION">WEAPONS VIOLATION</option>
+  </select>
+        <button type="button" id="btnSearch" class="btn btn-info" >Search</button>
+    </div>
+    
+              
+        </div>
+</div>
+</div>
+  <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div id="results">
+        
+        
+        
+    </div>
+              
+        </div>
+</div>
+</div>
+</body>
+    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    /*global $*/
+        
+       
+        $(function () {
+            
+            var baseUrl = "https://data.cityofchicago.org/resource/6zsd-86xi.json";
+            
+           
+           
+            var url = baseUrl;
+
+            
+            
+            $("#btnSearch").on("click", function() {
+                $("#results").html("");
+                
+                var year = $("#txtYear").val();
+                var type = $("#txtType").val();
+                var searchUrl = url + "?year=" + year + "&primary_type=" + type;
+              
+              
+
+                    console.log(searchUrl);
+                    
+                $.getJSON(searchUrl)
+                .done (function (data)  {
+                       
+                        console.log(data);
+                        
+                    $.each(data, function(index, value) {
+                        
+                        var html = 
+                        "<h2>Case Number: "
+                        +value.case_number
+                        +"</h2>"
+                        +"<p>Crime:"
+                        +value.primary_type
+                        +"</p>"
+                        +"<p>Description:"
+                        +value.description
+                        +"</p>"
+                        + "<p> Arrested: "
+                        + value.arrest
+                        + "</p>"
+                        +"<p> Block:"
+                        +value.block
+                        +"</p>"
+                        +"<p> Longitude: "
+                        +value.longitude
+                        +"</p>"
+                        +"<p> Latitude: "
+                        +value.latitude
+                        +'<a href="https://www.google.com/maps/place/' + value.latitude + "," + value.longitude +'"> Google Map </a>'
+                        +"</p>";
+                       
+                       
+                        
+                       
+                       
+         
+                        $("#results").append(html);
+                        
+               
+                    });
+                });
+            });
+        });    
+    </script>
+    
+</html>
