@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           body{
+               background-color:black;
+               color:lightgreen;
+               font-family:arial;
+           }
+           div{
+               color:lightgreen;
+           }
+           
+       </style>
+    </head>
+    <body>
+        
+        <center><h1>CTA Bus Tracker</h1></center>
+        
+        <div>
+            <h3>Select Route</h3>
+         <select id= "Route">
+          <option value="49-Western">49-Western</option>
+          <option value="X49-Western Express">X49-Western Express</option>
+          <option value="52-Kedzie/California">52-Kedzie/California</option>
+          <option value="152-Addison">152-Addison</option>
+          <option value="21-Cermak">21-Cermak</option>
+          <option value="94-South California">94-South California</option>
+          <option value="60-Blue Island/26th">60-Blue Island/26th</option>
+          <option value="35-31st/35th">35-31st/35th</option>
+          <option value="62-Archer">62-Archer</option>
+          </select>
+          <h3>Direction</h3>
+          <select id= "Direction" onChange= "directionSelected()">
+              <option value="Northbound">Northbound</option>
+              <option value="Southbound">Southbound</option>
+              <option value="Eastbound">Eastbound</option>
+              <option value="Westbound">Westbound</option>
+          </select>
+          <h3>Select Stop</h3>
+         <select id= "Stop" onChange= "stopSelected()">
+            
+         </select>    
+        </div>
+        <center>
+        <div id= "results">
+            
+        </div>
+        </center>
+        <script>
+            
+        </script>
+    </body>
+</html>

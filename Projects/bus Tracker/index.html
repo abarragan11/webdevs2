@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>jQuery.parseXML demo</title>
+ 
+  
+
+  <style> 
+  
+  
+    #rtX49{
+    background-color: gray;
+    border: solid black 1px;
+    padding: 5px;
+    border-radius:2px;
+    color:white;
+  }
+  #rt49{
+    background-color: gray;
+    border: solid black 1px;
+    padding: 5px;
+    border-radius:2px;
+    color:white;
+  }
+  #rt152{
+    background-color: gray;
+    border: solid black 1px;
+    padding: 5px;
+    border-radius:2px;
+    color:white;
+  }
+  
+  </style>
+</head>
+<body>
+    <center><h1>Bus Tracker</h1></center>
+
+ 
+ <center><img src="https://pbs.twimg.com/profile_images/1617237207/cta-logo---flattransp.png" alt="Mountain View" style="width:100px;height:100px;"></center>
+ <center><button id="submit" type="button" class="btn btn-success">Find CTA Buses Near Lane</button></center>
+ <br>
+ <div id="rtX49"></div>
+ <div id="rt49"></div>
+ <div id="rt152"></div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+     /*global $*/
+      $("#rtX49").hide();
+      $("#rt49").hide();
+      $("#rt152").hide();
+      $("#submit").click(function() {
+         $("#rtX49").empty().show();
+         $("#rt49").empty().show();
+         $("#rt152").empty().show();
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "yam3mQaEAaVpZBEJ8kHpmfsET",
+                      "format":"json",
+                      "rt":"49,X49,152",
+                      "stpid":"8417,12527,12569,8195,8417"
+              }
+            }).done (function (data) {
+              console.log(data);
+             $("#rtX49").append("<h2>Route X49</h2>");
+             $("#rt49").append("<h2>Route 49</h2>");
+             $("#rt152").append("<h2>Route 152</h2>");
+              $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#rt" + v.rt).append("Route Number: " + v.rt
+                  +  "<br>" 
+                  + "Route Direction: " + v.rtdir 
+                  + "<br>"
+                  + "Scheduled Arrival Time: " + v.prdtm  
+                  + "<br>"
+                  +  "Time left until arrival: " + v.prdctdn + " minutes"
+                  + "<br>"
+                  + "Delay: " + v.dly
+                  + "<br>"
+                  + "Destination: " + v.des
+                  + "<br>"
+                  + "Bus Number: " + v.vid
+                  + "<hr>");
+              });
+
+            });
+        });
+           
+         
+  
+</script>
+ 
+</body>
+</html>
