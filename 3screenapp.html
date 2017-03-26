@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <style>
+      .screen {display: none;}
+      table, th, td {
+      border: 1px solid black;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Schedules</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Schedule at School</span>
+        <nav class="mdl-navigation">
+          <a id="link1" class="mdl-navigation__link" href="#">School Schedule</a>
+          <a id="link2" class="mdl-navigation__link" href="#">My Schedule</a>
+          <a id="link3" class="mdl-navigation__link" href="#">School Map</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div id="screen1" class="screen page-content"><h1>LT Schedule</h1>
+        
+        <h3>Regular</h3>
+        <table id="regular">
+  <tr>
+    <th>Periods</th>
+    <th>Time</th>   
+    
+  </tr>
+  <tr>
+    <td>1st</td>
+    <td>8:00-8:50 a.m.</td>
+  </tr>
+  <tr>
+    <td>2nd</td>
+    <td>8:55-9:45 a.m.</td>
+  </tr>
+  <tr>
+    <td>3rd</td>
+    <td>9:50-10:40 a.m.</td>
+  </tr>
+  <tr>
+    <td>4th</td>
+    <td>10:45-11:35 a.m.</td>
+  </tr>
+  <tr>
+    <td>5th</td>
+    <td>11:40-12:30 p.m.</td>
+  </tr>
+  <tr>
+    <td>6th</td>
+    <td>12:35-1:25 p.m.</td>
+    </tr>
+    <tr>
+      <td>7th</td>
+      <td>1:30-2:20 p.m.</td>
+    </tr>
+    <tr>
+      <td>8th</td>
+      <td>2:25-3:15 p.m.</td>
+    </tr>
+</table>
+<h3>Advisory</h3>
+<table id="advisory">
+  <tr>
+    <th>Periods</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+    <td>1st</td>
+    <td>8:00-8:43 a.m.</td>
+  </tr>
+  <tr>
+    <td>2nd</td>
+    <td>8:48-9:31 a.m.</td>
+  </tr>
+  <tr>
+    <td>Advisory</td>
+    <td>9:36-10:27 a.m.</td>
+  </tr>
+  <tr>
+    <td>3rd</td>
+    <td>10:32-11:15 a.m.</td>
+  </tr>
+  <tr>
+  <td>4th</td>
+  <td>11:20-12:03 p.m.</td>
+  </tr>
+  <tr>
+    <td>5th</td>
+    <td>12:08-12:51 p.m.</td>
+  </tr>
+  <tr>
+    <td>6th</td>
+    <td>12:56-1:39 p.m.</td>
+  </tr>
+  <tr>
+    <td>7th</td>
+    <td>1:44-2:27 p.m.</td>
+    </tr>
+    <tr>
+      <td>8th</td>
+      <td>2:32-3:15 p.m.</td>
+    </tr>
+</table>
+        </div>
+        <div id="screen2" class="screen page-content"><h1>My Schedule</h1>
+        <h3>Regular</h3>
+        <table id="regular">
+  <tr>
+    <th>Periods</th>
+    <th>Time</th>
+    <th>Classes</th>
+    <th>Teachers</th>
+    <th>Room</th>
+  </tr>
+  <tr>
+    <td>1st</td>
+    <td>8:00-8:50 a.m.</td>
+    <td>R Chemistry</td>
+    <td>Ms.Hollingshead</td>
+    <td>111</td>
+  </tr>
+  <tr>
+    <td>2nd</td>
+    <td>8:55-9:45 a.m.</td>
+    <td>H Web Dev 1</td>
+    <td>Mr.Hayes</td>
+    <td>124</td>
+  </tr>
+  <tr>
+    <td>3rd</td>
+    <td>9:50-10:40 a.m.</td>
+    <td>H His. of Chicago</td>
+    <td>Mr.Campos</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>4th</td>
+    <td>10:45-11:35 a.m.</td>
+    <td>R English ll</td>
+    <td>Ms.Vidican</td>
+    <td>229</td>
+  </tr>
+  <tr>
+    <td>5th</td>
+    <td>11:40-12:30 p.m.</td>
+    <td>Lunch</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>6th</td>
+    <td>12:35-1:25 p.m.</td>
+    <td>R Geometry</td>
+    <td>Mr.Kane</td>
+    <td>313</td>
+    </tr>
+    <tr>
+      <td>7th</td>
+      <td>1:30-2:20 p.m.</td>
+      <td>R French ll</td>
+      <td>Mr.Polley</td>
+      <td>338</td>
+    </tr>
+    <tr>
+      <td>8th</td>
+      <td>2:25-3:15 p.m.</td>
+      <td>R Drivers Ed</td>
+      <td>Mr.Polki</td>
+      <td>199</td>
+    </tr>
+</table>
+<h3>Advisory</h3>
+<table id="advisory">
+  <tr>
+    <th>Periods</th>
+    <th>Time</th>
+    <th>Classes</th>
+    <th>Teachers</th>
+    <th>Room</th>
+  </tr>
+  <tr>
+    <td>1st</td>
+    <td>8:00-8:43 a.m.</td>
+    <td>R Chemistry</td>
+    <td>Ms.Hollingshead</td>
+    <td>111</td>
+  </tr>
+  <tr>
+    <td>2nd</td>
+    <td>8:48-9:31 a.m.</td>
+    <td>H Web Dev 1</td>
+    <td>Mr.Hayes</td>
+    <td>124</td>
+  </tr>
+  <tr>
+    <td>Advisory</td>
+    <td>9:36-10:27 a.m.</td>
+    <td>N/A</td>
+    <td>Ms.Sherwin</td>
+    <td>337</td>
+  </tr>
+  <tr>
+    <td>3rd</td>
+    <td>10:32-11:15 a.m.</td>
+    <td>H His.of Chicago</td>
+    <td>Mr.Campos</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>4th</td>
+    <td>11:20-12:03 p.m.</td>
+    <td>R English ll</td>
+    <td>Ms.Vidican</td>
+    <td>229</td>
+  </tr>
+  <tr>
+    <td>5th</td>
+    <td>12:08-12:51 p.m.</td>
+    <td>Lunch</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>6th</td>
+    <td>12:56-1:39 p.m.</td>
+    <td>R Geometry</td>
+    <td>Mr.Kane</td>
+    <td>313</td>
+    </tr>
+    <tr>
+      <td>7th</td>
+      <td>1:44-2:27 p.m.</td>
+      <td>R French ll</td>
+      <td>Mr.Polley</td>
+      <td>338</td>
+    </tr>
+    <tr>
+      <td>8th</td>
+      <td>2:32-3:15 p.m.</td>
+      <td>R Drivers Ed</td>
+      <td>Mr.Polki</td>
+      <td>199</td>
+    </tr>
+</table>
+        </div>
+        <div id="screen3" class="screen page-content"><h1>LT Map</h1>
+         <h3>First Floor</h3>
+         <img src="lane-1.png" alt="1st Floor" width="525" height="611">
+        <h3>Second Floor</h3>
+        <img src="lane-2.png" alt="2nd Floor" width="525" height="527">
+        <h3>Third Floor</h3>
+        <img src="lane-3.png" alt="3rd Floor" width="525" height="523">
+        <h3>Fourth Floor</h3>
+        <img src="lane-4.png" alt="4th Floor" width="525" height="649">
+        </div>
+      </main>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    /*global $*/
+      $(document).ready(function() {
+        $("#screen1").show();
+        
+        $("#link1").on("click", function(){
+          $(".screen").hide();
+          $("#screen1").show();
+        });
+        
+        $("#link2").on("click", function(){
+          $(".screen").hide();
+          $("#screen2").show();
+        });
+        
+        $("#link3").on("click", function(){
+          $(".screen").hide();
+          $("#screen3").show();
+        });
+        
+        });
+        $('.mdl-navigation__link').click(function(){
+        $('.mdl-layout__drawer').toggleClass('is-visible');
+        $('.mdl-layout__obfuscator').toggleClass('is-visible');   
+            
+ });
+
+      
+      
+    </script>
+  </body>
+</html>
